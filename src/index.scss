@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #0e1212;
+    overflow-x: hidden;
+}
+
+.night-transition {
+    background-image: linear-gradient(to bottom, #252525, #3f3744, #63475f, #8d5573, #bb647d, #d1717f, #e5807f, #f7907e, #f89f82, #f9ad89, #fabb92, #fac99e);
+}
+
+#shootingstars {
+margin: 0;
+padding: 0;
+width: 150vh;
+height: 100vw;
+position: fixed;
+overflow: hidden;
+transform: translatex(calc(50vw - 50%)) translatey(calc(50vh - 50%))
+    rotate(120deg);
+}
+
+.wish {
+height: 2px;
+top: 300px;
+width: 100px;
+margin: 0;
+opacity: 0;
+padding: 0;
+background-color: white;
+position: absolute;
+background: linear-gradient(-45deg, white, rgba(0, 0, 255, 0));
+filter: drop-shadow(0 0 6px white);
+overflow: hidden;
+}
+
+
+.display-presentation {
+    // center for all screens
+    padding: calc(50vh - 3.5rem) 0 0;
+}
+
+
+//rocket-animation
+#clouds {
+    animation: clouds 1s ease infinite alternate;
+}
+
+#fire {
+    animation: fires 1s linear infinite alternate;
+}
+
+#rocket {
+    animation: rocket-motion 1s ease infinite alternate;
+}
+
+#all-rocket-component {
+    animation: launching 4s ease;
+}
+
+@keyframes launching {
+    from{
+        transform: translatey(500px);
+    }
+    to{
+        transform: translatey(0);
+    }
+}
+
+@keyframes rocket-motion {
+    from{
+        transform: translatey(30px);
+    }
+    to{
+        transform: translatey(0);
+    }
+}
+
+@keyframes fires{
+    from{
+        transform: translatey(30px);
+        opacity: 0;
+
+    }
+    to {
+        transform: translatey(0);
+        opacity: 1;
+    }
+}
+
+@keyframes clouds{
+    from{
+        transform: translatey(30px);
+    }
+    to{
+        transform: translatey(0);
+    }
+}
+
+.test {
+    height:1000px;
+}
+
+.fade-in {
+    font-size:500px;
+}
+
+//spine arianne component
+
+.spine {
+    position: fixed;
+    top: 50vh;
+    bottom: 0;
+    left: calc(30vw - 2rem);
+    z-index: 2;
+    width: 1px;
+    background: #ffd54f;
+}
+.spine-target{
+    position: fixed;
+    top: calc(50vh - 8px);
+    left: calc(30vw - 2rem - 4px);
+    width: 9px;
+    height: 9px;
+    z-index: 2;
+
+    .circle,
+    .pulse{
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        border-radius: 3rem;
+        border: 1px solid #ffd54f;
+    }
+    .pulse {
+        border: 4px solid #ffd54f;
+        animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.wrapper {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 20vh;
+    min-height: 100vh;
+    transition: opacity .5s linear;
+}
+
+.wrapper::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50vh;
+    bottom: 50vh;
+    left: calc(30vw - 2rem);
+    z-index: 99;
+    width: 1px;
+    opacity: .3;
+    background: #ffd54f
+}
+
+

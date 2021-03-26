@@ -1,0 +1,43 @@
+
+
+
+#blackhole {
+    animation: rotateBlackHole 30s linear infinite;
+    transform-origin: center;
+}
+
+#jupiter_planet {
+    animation: upAndDOwnPlanet 8s linear infinite alternate;
+}
+
+#Cube {
+    animation: movingSmoothCube 30s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes movingSmoothCube{
+    from {
+        transform: rotate(0deg) translateX(-50px);
+    }
+    to {
+        transform: rotate(360deg) translateX(-20px);
+    }
+}
+
+@keyframes rotateBlackHole {
+    from{
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes upAndDOwnPlanet {
+    from {
+        transform: translateY(-70px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
